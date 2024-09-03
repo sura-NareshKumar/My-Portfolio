@@ -47,3 +47,40 @@ window.onscroll = () => {
 
     footer.classList.toggle('show-animate', this.innerHeight + this.scrollY >= document.scrollingElement.scrollHeight);
 }
+
+const prevButton = document.querySelector('.project-nav.prev');
+const nextButton = document.querySelector('.project-nav.next');
+const projectsWrapper = document.querySelector('.projects-row');
+const projectBoxes = document.querySelectorAll('.project-box');
+const projectCount = projectBoxes.length;
+const boxWidth = projectBoxes[0].offsetWidth + 20; // Width of each box + margin
+const visibleItems = 3; // Number of visible items at a time
+
+let currentIndex = 0;
+
+function updateButtons() {
+    prevButton.style.display = currentIndex === 0 ? 'none' : 'block';
+    nextButton.style.display = currentIndex >= projectCount - visibleItems ? 'none' : 'block';
+}
+
+function showNext() {
+    if (currentIndex < projectCount - visibleItems) {
+        currentIndex++;
+        projectsWrapper.style.transform = `translateX(-${currentIndex * boxWidth}px)`;
+        updateButtons();
+    }
+}
+
+function showPrev() {
+    if (currentIndex > 0) {
+        currentIndex--;
+        projectsWrapper.style.transform = `translateX(-${currentIndex * boxWidth}px)`;
+        updateButtons();
+    }
+}
+
+prevButton.addEventListener('click', showPrev);
+nextButton.addEventListener('click', showNext);
+
+// Initialize button visibility
+updateButtons();
