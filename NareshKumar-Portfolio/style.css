@@ -645,6 +645,23 @@ span {
     transform: scale(1.2); /* Slightly enlarge icon on hover */
     filter: brightness(1.2); /* Brighter icon on hover */
 }
+@media screen and (max-width: 480px) {
+    .projects-container {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: scroll;
+      scroll-behavior: smooth;
+    }
+    
+    .project {
+      min-width: calc(100% - 20px); /* Show one project div at a time */
+      margin: 10px;
+    }
+  
+    .arrow-button {
+      display: none; /* Hide arrow buttons on smaller screens if using swipe/scroll */
+    }
+  }
 
 .skills {
     min-height: auto;
@@ -738,7 +755,7 @@ span {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    animation: scroll 20s linear infinite;
+    
 }
 
 .icon-item {
@@ -1206,5 +1223,184 @@ section:nth-child(odd) .animate.scroll,
 @keyframes showRight {
     100% {
         width: 0;
+    }
+}
+
+/* @media screen and (max-width: 768px) {
+    .project-box {
+        min-width: calc(50% - 25px); /* Show 2 project divs at a time */
+        margin: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .projects-container {
+        display: flex;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+    }
+
+    .project-box {
+        min-width: calc(100% - 20px); /* Show one project div at a time */
+        margin: 10px;
+    }
+
+    .project-nav {
+        display: none; /* Hide navigation arrows on mobile for swipe scrolling */
+    }
+}
+@media screen and (max-width: 768px) {
+    .project-box {
+        min-width: 270px; /* Slightly smaller width for mobile view */
+        margin: 10px; /* Maintain spacing */
+    }
+
+    .project-box img {
+        height: 180px; /* Slightly reduced height for images */
+        object-fit: cover; /* Ensure images cover the entire area */
+    }
+
+    .project-box h3 {
+        font-size: 1.6rem; /* Adjusted font size for titles */
+    }
+
+    .btn-box {
+        gap: 8px; /* Slightly reduced gap between buttons */
+    }
+
+    .btn {
+        padding: 5px 10px; /* Maintain similar button padding */
+        font-size: 0.95rem; /* Slightly reduced font size for buttons */
+    }
+
+    .project-nav {
+        width: 45px; /* Smaller size for navigation arrows */
+        height: 45px;
+    }
+
+    .project-nav img {
+        width: 22px; /* Slightly smaller arrow icons */
+        height: 22px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .project-box {
+        min-width: 230px; /* Further reduced width for very small screens */
+        margin: 10px; /* Maintain spacing */
+    }
+
+    .project-box img {
+        height: 160px; /* Further reduced height for images */
+        object-fit: cover;
+    }
+
+    .project-box h3 {
+        font-size: 1.4rem; /* Further reduced font size for titles */
+    }
+
+    .btn-box {
+        gap: 6px; /* Further reduced gap between buttons */
+    }
+
+    .btn {
+        padding: 4px 8px; /* Further reduced button padding */
+        font-size: 0.85rem; /* Further reduced font size for buttons */
+    }
+
+    .project-nav {
+        width: 40px; /* Smaller size for navigation arrows */
+        height: 40px;
+    }
+
+
+
+@media screen and (max-width: 768px) {
+    .projects-container {
+        overflow: hidden; /* Hide overflow to show one project at a time */
+    }
+
+    .projects-wrapper {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .projects-row {
+        display: flex;
+        width: 100%; /* Ensure the row takes full width */
+    }
+
+    .project-box {
+        width: 100vw; /* Full viewport width for each project box */
+        margin: 0; /* Remove margin */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Maintain desktop shadow */
+        border-radius: 10px; /* Maintain desktop border radius */
+        padding: 10px; /* Maintain desktop padding */
+    }
+
+    .project-box img {
+        width: 100%; /* Ensure image takes full width of the box */
+        height: auto; /* Maintain aspect ratio */
+        max-height: 200px; /* Cap image height to maintain design */
+        object-fit: cover; /* Cover the entire area */
+        border-radius: 8px; /* Maintain desktop border radius */
+    }
+
+    .project-box h3 {
+        font-size: 1.6rem; /* Adjust title size */
+        margin: 10px 0; /* Margin for spacing */
+    }
+
+    .btn-box {
+        gap: 8px; /* Gap between buttons */
+    }
+
+    .btn {
+        padding: 5px 10px; /* Button padding */
+        font-size: 0.95rem; /* Button font size */
+    }
+
+    .project-nav {
+        width: 45px; /* Navigation arrow size */
+        height: 45px;
+    }
+
+    .project-nav img {
+        width: 22px; /* Arrow icon size */
+        height: 22px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .project-box {
+        width: 100vw; /* Full viewport width for very small screens */
+        margin: 0; /* Remove margin */
+    }
+
+    .project-box img {
+        max-height: 180px; /* Further cap image height */
+    }
+
+    .project-box h3 {
+        font-size: 1.4rem; /* Adjust title size */
+    }
+
+    .btn-box {
+        gap: 6px; /* Gap between buttons */
+    }
+
+    .btn {
+        padding: 4px 8px; /* Button padding */
+        font-size: 0.85rem; /* Button font size */
+    }
+
+    .project-nav {
+        width: 40px; /* Navigation arrow size */
+        height: 40px;
+    }
+
+    .project-nav img {
+        width: 20px; /* Arrow icon size */
+        height: 20px;
     }
 }
